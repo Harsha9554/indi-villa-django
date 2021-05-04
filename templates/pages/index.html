@@ -1,4 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+{% endblock styles %}
 {% block content %}
-    <h1>Home</h1>
+    <section class="main">
+        <div class="banner-1">
+            <h1 class="banner-title-1">Helping you find the property of your dreams.</h1>
+            <img class="banner-logo-1" src="{% static "images/brand3.svg"%}" alt="" width="600">
+            <a class="banner-button-1" href="">Try Now</a>
+        </div>
+    </section>
+    <section class="main2">
+        <div class="banner-2">
+            <h1 class="banner-title-2">Your Property, Our Priority.</h1>
+            <img class="banner-logo-2" src="{% static "images/brand.svg"%}" alt="" width="600">
+            <a class="banner-button-2" href="">Get Started!</a>
+        </div>
+    </section>
 {% endblock content %}

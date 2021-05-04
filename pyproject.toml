@@ -8,6 +8,7 @@ authors = ["Sai SriHarsha Griddaluru <sriharsha.9554@gmail.com>"]
 python = "^3.8"
 Django = "^3.2"
 flake8 = "^3.9.1"
+pylint = "^2.8.2"
 
 [tool.poetry.dev-dependencies]
 

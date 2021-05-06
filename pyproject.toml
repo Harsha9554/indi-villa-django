@@ -12,6 +12,7 @@ pylint = "^2.8.2"
 autopep8 = "^1.5.7"
 mysqlclient = "^2.0.3"
 django-environ = "^0.4.5"
+Pillow = "^8.2.0"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^21.4b2", allow-prereleases = true}

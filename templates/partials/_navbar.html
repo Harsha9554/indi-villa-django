@@ -1,12 +1,12 @@
 {% load static %}
 <nav>
     <div class="brand">
-        <img src="{% static "images/brand.svg"%}" alt="" width="18">
-        INDI-VILLA
+            <img src="{% static "images/brand.svg"%}" alt="" width="18">
+            INDI-VILLA
     </div>
     <ul class="links">
         <li><a class="nav-button"href="">About</a></li>
-        <li><a class="nav-button"href="">Listings</a></li>
+        <li><a class="nav-button"href="{% url "listings" %}">Listings</a></li>
         <li><a class="nav-button"href="">Buy</a></li>
         <li><a class="nav-button"href="">Sell</a></li>
         <li><a class="divider" href="">I</a></li>

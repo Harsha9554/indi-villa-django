@@ -1,0 +1,376 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static "css/listings.css"%}">
+    <title>INDI-VILLA</title>
+  </head>
+  <body>
+        <nav>
+            <div class="brand">
+                <a href="{% url "index"%}">
+                    <img src="{% static "images/brand.svg"%}" alt="" width="18">
+                    INDI-VILLA
+                </a>
+            </div>
+            <ul class="links">
+                <li><a class="nav-button"href="">About</a></li>
+                <li><a class="nav-button"href="">Buy</a></li>
+                <li><a class="nav-button"href="">Sell</a></li>
+                <li><a class="divider" href="">I</a></li>
+                <li>
+                    <div class="profile">
+                        <img src="/dist/pp.svg" alt="" width="35">
+                        <img src="{%static "images/pp.svg"%}" alt="" width="35">
+                        <div class="p-dd">
+                            <a clas="p-dd-btn" href="">Profile</a>
+                            <div class="p-dd-c">
+                                <a href="">Account</a>
+                                <a href="">Analytics</a>
+                                <a href="">Log out</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <section class="filters">
+                <div class="filters-h"><h1>FILTERS</h1></div>
+                <hr>
+                <section class="filter-sections">
+                    <div class="filter-section multi">
+                        <h1 class="title">Location</h1>
+                        <div class="choices">
+                            <form action="">
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Vijaywada</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Hyderabad</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Guntur</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Bengaluru</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="filter-section multi">
+                        <h1 class="title">Category</h1>
+                        <div class="choices">
+                            <form action="">
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">House</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Apartment</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Office</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Villa</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="filter-section multi">
+                        <h1 class="title">Property Type</h1>
+                        <div class="choices">
+                            <form action="">
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Residential</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Land</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Commercial</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="filter-section multi">
+                        <h1 class="title">Agency</h1>
+                        <div class="choices">
+                            <form action="">
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">INDI-VILLA</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">T-Agency</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">WorldWise Agency</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Supreme Agency</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="filter-section multi">
+                        <h1 class="title">Features</h1>
+                        <div class="choices">
+                            <form action="">
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Parking</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Balcony</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Gym</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">Garage</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="filter-section multi">
+                        <h1 class="title">Sort By</h1>
+                        <div class="choices">
+                            <form action="">
+                                <div class="choice">
+                                    <input type="radio" name="BZA" id="BZA">
+                                    <label for="BZA">Price (Low-High)</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="radio" name="BZA" id="BZA">
+                                    <label for="BZA">Price (High-Low)</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="radio" name="BZA" id="BZA">
+                                    <label for="BZA">Date</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="radio" name="BZA" id="BZA">
+                                    <label for="BZA">Build Area</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="filter-section multi">
+                        <h1 class="title">Price</h1>
+                        <div class="choices">
+                            <form action="">
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">less than ₹ 30L</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">₹ 30L - ₹ 40L</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">₹ 40L - ₹ 50L</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">above ₹ 50L</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="filter-section multi">
+                        <h1 class="title">Build Area</h1>
+                        <div class="choices">
+                            <form action="">
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">less than 1000 sq.ft</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">1000 sq.ft - 2000 sq.ft</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">2000 sq.ft - 3000 sq.ft</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">3000 sq.ft - 4000 sq.ft</label>
+                                </div>
+                                <div class="choice">
+                                    <input type="checkbox" name="BZA" id="BZA">
+                                    <label for="BZA">above 4000 sq.ft</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section class="card-panel">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-image">
+                                <img src="{% static  "images/pi.png" %}" alt="" width="380">
+                                <div class="loc-imag">
+                                Bengaluru
+                                </div>
+                        </div>
+                        <div class="details">
+                            <h1 class="card-title">Sowparnika Ashiyanan</h1>
+                            <div class="address">
+                                <img src="{% static  "images/loc.svg" %}" alt="" width="20">
+                                <h4>Whitefield, Bengaluru East</h4>
+                            </div>
+                            <div class="status">
+                                <a href="" class="tag">Under-Construction</a>
+                                <a href="" class="tag">For Sale</a>
+                            </div>
+                            <div class="mini-card">
+                                <h1 class="price-range">₹ 40.3 L - ₹ 50.4 L</h1>
+                                <h4 class="bhk">2 BHK - 4 BHK</h4>
+                                <h4 class="sqft">from 3200 sq.ft.</h4>
+                                <div class="m-button">
+                                    <a href="" class="category">More Info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                                <img src="{% static  "images/pi.png" %}" alt="" width="380">
+                                <div class="loc-imag">
+                                Bengaluru
+                                </div>
+                        </div>
+                        <div class="details">
+                            <h1 class="card-title">Sowparnika Ashiyanan</h1>
+                            <div class="address">
+                                <img src="{% static  "images/loc.svg" %}" alt="" width="20">
+                                <h4>Whitefield, Bengaluru East</h4>
+                            </div>
+                            <div class="status">
+                                <a href="" class="tag">Under-Construction</a>
+                                <a href="" class="tag">For Sale</a>
+                            </div>
+                            <div class="mini-card">
+                                <h1 class="price-range">₹ 40.3 L - ₹ 50.4 L</h1>
+                                <h4 class="bhk">2 BHK - 4 BHK</h4>
+                                <h4 class="sqft">from 3200 sq.ft.</h4>
+                                <div class="m-button">
+                                    <a href="" class="category">More Info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                                <img src="{% static  "images/pi.png" %}" alt="" width="380">
+                                <div class="loc-imag">
+                                Bengaluru
+                                </div>
+                        </div>
+                        <div class="details">
+                            <h1 class="card-title">Sowparnika Ashiyanan</h1>
+                            <div class="address">
+                                <img src="{% static  "images/loc.svg" %}" alt="" width="20">
+                                <h4>Whitefield, Bengaluru East</h4>
+                            </div>
+                            <div class="status">
+                                <a href="" class="tag">Under-Construction</a>
+                                <a href="" class="tag">For Sale</a>
+                            </div>
+                            <div class="mini-card">
+                                <h1 class="price-range">₹ 40.3 L - ₹ 50.4 L</h1>
+                                <h4 class="bhk">2 BHK - 4 BHK</h4>
+                                <h4 class="sqft">from 3200 sq.ft.</h4>
+                                <div class="m-button">
+                                    <a href="" class="category">More Info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                                <img src="{% static  "images/pi.png" %}" alt="" width="380">
+                                <div class="loc-imag">
+                                Bengaluru
+                                </div>
+                        </div>
+                        <div class="details">
+                            <h1 class="card-title">Sowparnika Ashiyanan</h1>
+                            <div class="address">
+                                <img src="{% static  "images/loc.svg" %}" alt="" width="20">
+                                <h4>Whitefield, Bengaluru East</h4>
+                            </div>
+                            <div class="status">
+                                <a href="" class="tag">Under-Construction</a>
+                                <a href="" class="tag">For Sale</a>
+                            </div>
+                            <div class="mini-card">
+                                <h1 class="price-range">₹ 40.3 L - ₹ 50.4 L</h1>
+                                <h4 class="bhk">2 BHK - 4 BHK</h4>
+                                <h4 class="sqft">from 3200 sq.ft.</h4>
+                                <div class="m-button">
+                                    <a href="" class="category">More Info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                                <img src="{% static  "images/pi.png" %}" alt="" width="380">
+                                <div class="loc-imag">
+                                Bengaluru
+                                </div>
+                        </div>
+                        <div class="details">
+                            <h1 class="card-title">Sowparnika Ashiyanan</h1>
+                            <div class="address">
+                                <img src="{% static  "images/loc.svg" %}" alt="" width="20">
+                                <h4>Whitefield, Bengaluru East</h4>
+                            </div>
+                            <div class="status">
+                                <a href="" class="tag">Under-Construction</a>
+                                <a href="" class="tag">For Sale</a>
+                            </div>
+                            <div class="mini-card">
+                                <h1 class="price-range">₹ 40.3 L - ₹ 50.4 L</h1>
+                                <h4 class="bhk">2 BHK - 4 BHK</h4>
+                                <h4 class="sqft">from 3200 sq.ft.</h4>
+                                <div class="m-button">
+                                    <a href="" class="category">More Info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  </body>
+    {% include "partials/_footer.html"%}
+</html>

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "listings.apps.ListingsConfig",
     "agents.apps.AgentsConfig",
     "agencies.apps.AgenciesConfig",
+    "indian_numbers",
 ]
 
 MIDDLEWARE = [

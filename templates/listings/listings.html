@@ -1,4 +1,5 @@
 {% load static %}
+{% load indian_numbers_tags %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -251,161 +252,45 @@
             </section>
             <section class="card-panel">
                 <div class="cards">
-                    <div class="card">
-                        <div class="card-image">
-                                <img src="{% static  "images/pi.png" %}" alt="" width="380">
-                                <div class="loc-imag">
-                                Bengaluru
+                    {% if listings %}
+                        {% for listing in listings %}
+                            <div class="card">
+                                <div class="card-image">
+                                        <img src="{{ listing.photo_main.url }}" alt="" width="380">
+                                        <div class="loc-imag">
+                                        {{ listing.city }}
+                                        </div>
                                 </div>
+                                <div class="details">
+                                    <h1 class="card-title">{{listing.title}}</h1>
+                                    <div class="address">
+                                        <img src="{% static  "images/loc.svg" %}" alt="" width="20">
+                                        <h4>{{ listing.address }}</h4>
+                                    </div>
+                                    <div class="mini-card">
+                                        <div class="mini-p">
+                                            <h1>₹ {{ listing.price | floatword_indian}}</h1>
+                                        </div>
+                                        <div class="mini-b1">
+                                            <i class="fas fa-bed fa-lg"></i>
+                                            <h3>{{ listing.bedrooms }} Bedrooms</h3>
+                                        </div>
+                                        <div class="mini-b2">
+                                            <i class="fas fa-toilet-paper fa-lg"></i>
+                                            <h3>{{ listing.bathrooms }} Bathrooms</h3>
+                                        </div>
+                                    </div>
+                                    <div class="card-button">
+                                        <a href="">More Info</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="col-md-12">
+                            <p>No Listings Available</p>
                         </div>
-                        <div class="details">
-                            <h1 class="card-title">Sowparnika Ashiyanan</h1>
-                            <div class="address">
-                                <img src="{% static  "images/loc.svg" %}" alt="" width="20">
-                                <h4>Whitefield, Bengaluru East</h4>
-                            </div>
-                            <div class="mini-card">
-                                <div class="mini-p">
-                                    <h1>₹ 40.2 Lakhs</h1>
-                                </div>
-                                <div class="mini-b1">
-                                    <i class="fas fa-bed fa-lg"></i>
-                                    <h3>3 Bedrooms</h3>
-                                </div>
-                                <div class="mini-b2">
-                                    <i class="fas fa-toilet-paper fa-lg"></i>
-                                    <h3>3 Bathrooms</h3>
-                                </div>
-                            </div>
-                            <div class="card-button">
-                                <a href="">More Info</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-image">
-                                <img src="{% static  "images/pi.png" %}" alt="" width="380">
-                                <div class="loc-imag">
-                                Bengaluru
-                                </div>
-                        </div>
-                        <div class="details">
-                            <h1 class="card-title">Sowparnika Ashiyanan</h1>
-                            <div class="address">
-                                <img src="{% static  "images/loc.svg" %}" alt="" width="20">
-                                <h4>Whitefield, Bengaluru East</h4>
-                            </div>
-                            <div class="mini-card">
-                                <div class="mini-p">
-                                    <h1>₹ 40.2 Lakhs</h1>
-                                </div>
-                                <div class="mini-b1">
-                                    <i class="fas fa-bed fa-lg"></i>
-                                    <h3>3 Bedrooms</h3>
-                                </div>
-                                <div class="mini-b2">
-                                    <i class="fas fa-toilet-paper fa-lg"></i>
-                                    <h3>3 Bathrooms</h3>
-                                </div>
-                            </div>
-                            <div class="card-button">
-                                <a href="">More Info</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-image">
-                                <img src="{% static  "images/pi.png" %}" alt="" width="380">
-                                <div class="loc-imag">
-                                Bengaluru
-                                </div>
-                        </div>
-                        <div class="details">
-                            <h1 class="card-title">Sowparnika Ashiyanan</h1>
-                            <div class="address">
-                                <img src="{% static  "images/loc.svg" %}" alt="" width="20">
-                                <h4>Whitefield, Bengaluru East</h4>
-                            </div>
-                            <div class="mini-card">
-                                <div class="mini-p">
-                                    <h1>₹ 40.2 Lakhs</h1>
-                                </div>
-                                <div class="mini-b1">
-                                    <i class="fas fa-bed fa-lg"></i>
-                                    <h3>3 Bedrooms</h3>
-                                </div>
-                                <div class="mini-b2">
-                                    <i class="fas fa-toilet-paper fa-lg"></i>
-                                    <h3>3 Bathrooms</h3>
-                                </div>
-                            </div>
-                            <div class="card-button">
-                                <a href="">More Info</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-image">
-                                <img src="{% static  "images/pi.png" %}" alt="" width="380">
-                                <div class="loc-imag">
-                                Bengaluru
-                                </div>
-                        </div>
-                        <div class="details">
-                            <h1 class="card-title">Sowparnika Ashiyanan</h1>
-                            <div class="address">
-                                <img src="{% static  "images/loc.svg" %}" alt="" width="20">
-                                <h4>Whitefield, Bengaluru East</h4>
-                            </div>
-                            <div class="mini-card">
-                                <div class="mini-p">
-                                    <h1>₹ 40.2 Lakhs</h1>
-                                </div>
-                                <div class="mini-b1">
-                                    <i class="fas fa-bed fa-lg"></i>
-                                    <h3>3 Bedrooms</h3>
-                                </div>
-                                <div class="mini-b2">
-                                    <i class="fas fa-toilet-paper fa-lg"></i>
-                                    <h3>3 Bathrooms</h3>
-                                </div>
-                            </div>
-                            <div class="card-button">
-                                <a href="">More Info</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-image">
-                                <img src="{% static  "images/pi.png" %}" alt="" width="380">
-                                <div class="loc-imag">
-                                Bengaluru
-                                </div>
-                        </div>
-                        <div class="details">
-                            <h1 class="card-title">Sowparnika Ashiyanan</h1>
-                            <div class="address">
-                                <img src="{% static  "images/loc.svg" %}" alt="" width="20">
-                                <h4>Whitefield, Bengaluru East</h4>
-                            </div>
-                            <div class="mini-card">
-                                <div class="mini-p">
-                                    <h1>₹ 40.2 Lakhs</h1>
-                                </div>
-                                <div class="mini-b1">
-                                    <i class="fas fa-bed fa-lg"></i>
-                                    <h3>3 Bedrooms</h3>
-                                </div>
-                                <div class="mini-b2">
-                                    <i class="fas fa-toilet-paper fa-lg"></i>
-                                    <h3>3 Bathrooms</h3>
-                                </div>
-                            </div>
-                            <div class="card-button">
-                                <a href="">More Info</a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endif %}
             </div>
             </section>
         </main>

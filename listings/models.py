@@ -10,6 +10,7 @@ class Listing(models.Model):
         OFFICE = "Office"
         PG = "PG"
         HOSTEL = "Hostel"
+        VILLA = "Villa"
         OTHER = "Other"
 
     class ListingType(models.TextChoices):

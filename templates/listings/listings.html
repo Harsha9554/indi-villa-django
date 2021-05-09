@@ -292,6 +292,24 @@
                         </div>
                     {% endif %}
             </div>
+            <!--- <div class="pagination">
+                <a href="" class="disabled">Previous</a>
+                <a href="" class="active">Next</a>
+            </div> --> 
+            {% if listings.has_other_pages %}
+                <div class="pagination">
+                    {% if listings.has_previous %}
+                        <a href="?page={{listings.previous_page_number}}" class="active">Previous</a>
+                    {% else %}
+                        <a href="" class="disabled">Previous</a>
+                    {% endif %}
+                    {% if listings.has_next %}
+                        <a href="?page={{listings.next_page_number}}" class="active">Next</a>
+                    {% else %}
+                        <a href="" class="disabled">Next</a>
+                    {% endif %}
+                </div>
+            {% endif %}
             </section>
         </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>

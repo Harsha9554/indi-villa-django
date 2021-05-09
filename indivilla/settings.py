@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "agents.apps.AgentsConfig",
     "agencies.apps.AgenciesConfig",
     "indian_numbers",
+    "django.contrib.humanize",
 ]
 
 MIDDLEWARE = [

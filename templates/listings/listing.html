@@ -1,17 +1,21 @@
+{% load static %}
+{% load indian_numbers_tags %}
+{% load humanize %}
 <html lang="en">
-  <head>
+     <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/dist/css/property.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' integrity='sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==' crossorigin='anonymous'/>
+    <link rel="stylesheet" href="{% static "css/listing.css"%}">
     <title>INDI-VILLA</title>
   </head>
   <body>
         <nav>
             <div class="brand">
-                <img src="/dist/brand.svg" alt="" width="18">
+                <img src="{% static "images/brand.svg" %}" alt="" width="18">
                 INDI-VILLA
             </div>
             <ul class="links">
@@ -21,7 +25,7 @@
                 <li><a class="divider" href="">I</a></li>
                 <li>
                     <div class="profile">
-                        <img src="{% static "images/pp.svg"%}" alt="" width="35">
+                        <img src="{% static "images/pp.svg" %}" alt="" width="35">
                         <div class="p-dd">
                             <a clas="p-dd-btn" href="">Profile</a>
                             <div class="p-dd-c">
@@ -37,14 +41,14 @@
         <section class="content">
             <main class="grid-container">
                 <div class="grid-name-grid grid-item">
-                    <h1 class="card-title">Sowparnika Ashiyanan</h1>
+                    <h1 class="card-title">{{listing.title}}</h1>
                     <div class="address">
-                        <img src="/dist/loc2.svg" alt="" width="14">
-                        <h4>Whitefield, Bengaluru East</h4>
+                        <img src="{% static "images/loc2.svg" %}" alt="" width="14">
+                        <h4>{{listing.address}}</h4>
                     </div>
                     <div class="status">
-                        <a href="" class="tag">Under-Construction</a>
-                        <a href="" class="tag">For Sale</a>
+                        <a href="" class="tag">{{listing.listing_current_status}}</a>
+                        <a href="" class="tag">For {{listing.listing_buy_status}}</a>
                     </div> 
                 </div>
                 <div class="grid-photos grid-item">
@@ -52,69 +56,134 @@
                 <div class="grid-details grid-item">
                     <div class="detail">
                         <h1>Details</h1>
-                        <table id="detail-table">
-                        <colgroup>
-                            <col style="width:30%">
-                            <col style="width:70%">
-                        </colgroup>
-                            <tr>
-                                <td>Category</td>
-                                <td>Apartment</td>
-                            </tr>
-                            <tr>
-                                <td>Category</td>
-                                <td>Apartment</td>
-                            </tr>
-                            <tr>
-                                <td>Category</td>
-                                <td>Apartment</td>
-                            </tr>
-                            <tr>
-                                <td>Category</td>
-                                <td>Apartment</td>
-                            </tr>
-                            <tr>
-                                <td>Category</td>
-                                <td>Apartment</td>
-                            </tr>
-                            <tr>
-                                <td>Category</td>
-                                <td>Apartment</td>
-                            </tr>
-                            <tr>
-                                <td>Category</td>
-                                <td>Apartment</td>
-                            </tr>
-                            <tr>
-                                <td>Category</td>
-                                <td>Apartment</td>
-                            </tr>
-                        </table>
+                    <table class="detail-table2">
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:30%">
+                        <col style="width:60%">
+                    </colgroup>
+                        <tr>
+                            <td class="table-image fa-lg">
+                                <i class="fas fa-building"></i>
+                            </td>
+                            <td>Project Title</td>
+                            <td>{{listing.title}}</td>
+                        </tr>
+                        <tr>
+                            <td class="table-image fa-lg">
+                                <i class="fas fa-map"></i>
+                            </td>
+                            <td>State</td>
+                            <td>{{listing.state}}</td>
+                        </tr>
+                        <tr>
+                            <td class="table-image fa-lg">
+                                <i class="fas fa-city"></i>
+                            </td>
+                            <td>City</td>
+                            <td>{{listing.city}}</td>
+                        </tr>
+                        <tr>
+                            <td class="table-image fa-lg">
+                                <i class="fas fa-rupee-sign"></i>
+                            </td>
+                            <td>Price</td>
+                            <td>{{listing.price | floatword_indian }}</td>
+                        </tr>
+                        <tr>
+                            <td class="table-image fa-lg">
+                                <i class="fas fa-bed"></i>
+                            </td>
+                            <td>Bedrooms</td>
+                            <td>{{listing.bedrooms}}</td>
+                        </tr>
+                        <tr>
+                            <td class="table-image fa-lg">
+                                <i class="fas fa-toilet-paper"></i>
+                            </td>
+                            <td>Bathrooms</td>
+                            <td>{{listing.bathrooms}}</td>
+                        </tr>
+                        <tr>
+                            <td class="table-image fa-lg">
+                                <i class="fas fa-car"></i>
+                            </td>
+                            <td>Garage</td>
+                            <td>{{listing.garage}}</td>
+                        </tr>
+                        <tr>
+                            <td class="table-image fa-lg">
+                                <i class="fas fa-couch"></i>
+                            </td>
+                            <td>Category</td>
+                            <td>{{listing.listing_category}}</td>
+                        </tr>
+                        <tr>
+                            <td class="table-image fa-lg">
+                                <i class="fas fa-street-view"></i>
+                            </td>
+                            <td>Type</td>
+                            <td>{{listing.listing_type}}</td>
+                        </tr>
+                        <tr>
+                            <td class="table-image fa-lg">
+                                <i class="fas fa-clock"></i>
+                            </td>
+                            <td>Date Posted</td>
+                            <td>{{ listing.list_date | naturaltime }}</td>
+                        </tr>
+                    </table>
                     </div>
                     <div class="description">
                         <h1>Description</h1>
-                        <p>At very prime location at At Sigra Varanasi very good society for a better living experience 24*7 Gaurd & 24*7 Lift facility intercom connectivity and very secured place where you can live your pleasant life. very minimum maintenance cost according to other apartments situated around that place.</p>
+                        <p>At very prime location at At Sigra Varanasi very good society for a better living experience 24*7 Guard & 24*7 Lift facility intercom connectivity and very secured place where you can live your pleasant life. very minimum maintenance cost according to other apartments situated around that place.</p>
                     </div>
                 </div>
-                <div class="grid-price-card grid-item">
-                    <h1 class="price"> ₹ 40.3L -  ₹ 50.4L</h1>
-                    <h4 class="bhk">2 BHK - 3 BHK</h4>
-                    <h4 class="sqft">from 3200 sq. ft</h4>
-                </div>
                 <div class="po-card grid-item">
-                    <h1>Property Owner Details</h1>
+                    <h1>Agent Details</h1>
+                    <div class="agent-name">
+                        <img src="{{agent.photo.url }}" alt="" width="125">
+                        <h2>Ravi Kumar</h2>
+                    </div>
+                    <table class="agent-table">
+                        <colgroup>
+                            <col style="width:5%">
+                            <col style="width:45%">
+                            <col style="width:50%">
+                        </colgroup>
+                          <tr>
+                              <td class="table-image">
+                                  <i class="fas fa-mobile"></i>
+                              </td>
+                              <td>Mobile</td>
+                              <td>99999 99999</td>
+                          </tr>
+                          <tr>
+                              <td class="table-image">
+                                  <i class="fas fa-envelope"></i>
+                              </td>
+                              <td>Email</td>
+                              <td>rajkumar@gmail.com</td>
+                          </tr>
+                          <tr>
+                              <td class="table-image">
+                                  <i class="fas fa-building"></i>
+                              </td>
+                              <td>Agency</td>
+                              <td>INDI-VILLA</td>
+                          </tr>
+                    </table>
+                <div class="agent-button">
+                    <a href="">Enquire Now</a>
+                </div>
                 </div>
                 <div class="location grid-item">
                     <h1>Location</h1>
 
                 </div>
-                <div class="agent grid-item">
-                    <h1>Agency Details</h1>
-                </div>
-
             </main>
         </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-  </body>
+  </body> 
     {% include "partials/_footer.html"%}
 </html>

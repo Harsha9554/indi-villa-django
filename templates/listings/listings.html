@@ -281,7 +281,7 @@
                                         </div>
                                     </div>
                                     <div class="card-button">
-                                        <a href="">More Info</a>
+                                        <a href="{% url "listing" listing.id %}">More Info</a>
                                     </div>
                                 </div>
                             </div>
@@ -292,10 +292,6 @@
                         </div>
                     {% endif %}
             </div>
-            <!--- <div class="pagination">
-                <a href="" class="disabled">Previous</a>
-                <a href="" class="active">Next</a>
-            </div> --> 
             {% if listings.has_other_pages %}
                 <div class="pagination">
                     {% if listings.has_previous %}

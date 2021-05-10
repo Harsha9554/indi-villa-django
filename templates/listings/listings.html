@@ -45,209 +45,108 @@
                 <div class="filters-h"><h1>FILTERS</h1></div>
                 <hr>
                 <section class="filter-sections">
+                <form action="listings" method="POST">
+                    {% csrf_token %}
                     <div class="filter-section multi">
                         <h1 class="title">City</h1>
                         <div class="choices">
-                            <form action="">
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Vijaywada</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Hyderabad</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Guntur</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Bengaluru</label>
-                                </div>
-                            </form>
+                        <select name="city" class="form-control">
+                            <option selected="true" disabled="disabled">City (All)
+                            </option>
+                            {% for k,v in city_choices.items %}
+                                <option value="{{ k }}">
+                                {{v}}
+                                </option>
+                            {% endfor %}
+                        </select>
                         </div>
                     </div>
                     <div class="filter-section multi">
                         <h1 class="title">State</h1>
                         <div class="choices">
-                            <form action="">
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Andhra Pradesh</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Telangana</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Karnataka</label>
-                                </div>
-                            </form>
+                        <select name="state" class="form-control">
+                            <option selected="true" disabled="disabled">State (All)
+                            </option>
+                            {% for k,v in state_choices.items %}
+                                <option value="{{ k }}">
+                                {{v}}
+                                </option>
+                            {% endfor %}
+                        </select>
                         </div>
                     </div>
                     <div class="filter-section multi">
                         <h1 class="title">Category</h1>
                         <div class="choices">
-                            <form action="">
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">House</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Apartment</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Office</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Villa</label>
-                                </div>
-                            </form>
+                        <select name="category" class="form-control">
+                            <option selected="true" disabled="disabled">Category
+                            </option>
+                            {% for k,v in category_choices.items %}
+                                <option value="{{ k }}">
+                                {{v}}
+                                </option>
+                            {% endfor %}
+                        </select>
                         </div>
                     </div>
                     <div class="filter-section multi">
-                        <h1 class="title">Property Type</h1>
+                        <h1 class="title">Type</h1>
                         <div class="choices">
-                            <form action="">
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Residential</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Land</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Commercial</label>
-                                </div>
-                            </form>
+                        <select name="l_type" class="form-control">
+                            <option selected="true" disabled="disabled">Type 
+                            </option>
+                            {% for k,v in type_choices.items %}
+                                <option value="{{ k }}">
+                                {{v}}
+                                </option>
+                            {% endfor %}
+                        </select>
                         </div>
                     </div>
                     <div class="filter-section multi">
-                        <h1 class="title">Agency</h1>
+                        <h1 class="title">Bedrooms</h1>
                         <div class="choices">
-                            <form action="">
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">INDI-VILLA</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">T-Agency</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">WorldWise Agency</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Supreme Agency</label>
-                                </div>
-                            </form>
+                        <select name="bedrooms" class="form-control">
+                            <option selected="true" disabled="disabled">Bedrooms
+                            </option>
+                            {% for k,v in bedroom_choices.items %}
+                                <option value="{{ k }}">
+                                {{v}}
+                                </option>
+                            {% endfor %}
+                        </select>
                         </div>
                     </div>
-                    <div class="filter-section multi">
-                        <h1 class="title">Features</h1>
+                      <div class="filter-section multi">
+                        <h1 class="title">Bathrooms</h1>
                         <div class="choices">
-                            <form action="">
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Parking</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Balcony</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Gym</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">Garage</label>
-                                </div>
-                            </form>
+                        <select name="bathrooms" class="form-control">
+                            <option selected="true" disabled="disabled">Bathrooms
+                            </option>
+                            {% for k,v in bathroom_choices.items %}
+                                <option value="{{ k }}">
+                                {{v}}
+                                </option>
+                            {% endfor %}
+                        </select>
                         </div>
                     </div>
-                    <div class="filter-section multi">
-                        <h1 class="title">Sort By</h1>
+                      <div class="filter-section multi">
+                        <h1 class="title">Garage</h1>
                         <div class="choices">
-                            <form action="">
-                                <div class="choice">
-                                    <input type="radio" name="BZA" id="BZA">
-                                    <label for="BZA">Price (Low-High)</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="radio" name="BZA" id="BZA">
-                                    <label for="BZA">Price (High-Low)</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="radio" name="BZA" id="BZA">
-                                    <label for="BZA">Date</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="radio" name="BZA" id="BZA">
-                                    <label for="BZA">Build Area</label>
-                                </div>
-                            </form>
+                        <select name="garage" class="form-control">
+                            <option selected="true" disabled="disabled">Garage
+                            </option>
+                            {% for k,v in garage_choices.items %}
+                                <option value="{{ k }}">
+                                {{v}}
+                                </option>
+                            {% endfor %}
+                        </select>
                         </div>
                     </div>
-                    <div class="filter-section multi">
-                        <h1 class="title">Price</h1>
-                        <div class="choices">
-                            <form action="">
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">less than ₹ 30L</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">₹ 30L - ₹ 40L</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">₹ 40L - ₹ 50L</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">above ₹ 50L</label>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="filter-section multi">
-                        <h1 class="title">Build Area</h1>
-                        <div class="choices">
-                            <form action="">
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">less than 1000 sq.ft</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">1000 sq.ft - 2000 sq.ft</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">2000 sq.ft - 3000 sq.ft</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">3000 sq.ft - 4000 sq.ft</label>
-                                </div>
-                                <div class="choice">
-                                    <input type="checkbox" name="BZA" id="BZA">
-                                    <label for="BZA">above 4000 sq.ft</label>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    <button type="submit">Submit</button>
+                </form>
                 </section>
             </section>
             <section class="card-panel">
@@ -309,6 +208,8 @@
             </section>
         </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
   </body>
     {% include "partials/_footer.html"%}
+    <script type="text/javascript" src="{% static "js/filter-listings.js" %}"></script>
 </html>

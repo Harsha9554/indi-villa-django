@@ -32,7 +32,11 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "*",
+]
+
+SILENCED_SYSTEM_CHECKS = ["urls.W002"]
 
 
 # Application definition

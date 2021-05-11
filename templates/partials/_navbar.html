@@ -1,8 +1,13 @@
 {% load static %}
+<head>
+    <link rel="stylesheet" href="{% static "css/navbar.css" %}">
+</head>
 <nav>
     <div class="brand">
-            <img src="{% static "images/brand.svg"%}" alt="" width="18">
-            INDI-VILLA
+            <a href="{% url "index" %}">
+                <img src="{% static "images/brand.svg"%}" alt="" width="18">
+                INDI-VILLA
+            </a>
     </div>
     <ul class="links">
         <li><a class="nav-button"href="">About</a></li>
@@ -10,7 +15,7 @@
         <li><a class="nav-button"href="">Buy</a></li>
         <li><a class="nav-button"href="">Sell</a></li>
         <li><a class="divider" href="">I</a></li>
-        <li><a class="nav-button"href="">Sign up</a></li>
-        <li><a class="nav-button"href="">Log in</a></li>
+        <li><a class="nav-button"href="{% url "signup" %}">Sign up</a></li>
+        <li><a class="nav-button"href="{% url "login" %}">Log in</a></li>
     </ul>
 </nav>

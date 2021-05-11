@@ -13,33 +13,7 @@
     <title>INDI-VILLA</title>
   </head>
   <body>
-        <nav>
-            <div class="brand">
-                <a href="{% url "index"%}">
-                    <img src="{% static "images/brand.svg"%}" alt="" width="18">
-                    INDI-VILLA
-                </a>
-            </div>
-            <ul class="links">
-                <li><a class="nav-button"href="">About</a></li>
-                <li><a class="nav-button"href="">Buy</a></li>
-                <li><a class="nav-button"href="">Sell</a></li>
-                <li><a class="divider" href="">I</a></li>
-                <li>
-                    <div class="profile">
-                        <img src="{%static "images/pp.svg"%}" alt="" width="35">
-                        <div class="p-dd">
-                            <a clas="p-dd-btn" href="">Profile</a>
-                            <div class="p-dd-c">
-                                <a href="">Account</a>
-                                <a href="">Analytics</a>
-                                <a href="">Log out</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+        {% include "partials/_navbar.html" %}
         <main>
             <section class="filters">
                 <div class="filters-h"><h1>FILTERS</h1></div>
@@ -48,22 +22,6 @@
                 <form action="listings" method="POST">
                     {% csrf_token %}
                     <div class="filter-section multi">
-                        <h1 class="title">City</h1>
-                        <div class="choices">
-                        <select name="city" class="form-control">
-                            <option selected="true" disabled="disabled">City (All)
-                            </option>
-                            {% for k,v in city_choices.items %}
-                                <option value="{{ k }}">
-                                {{v}}
-                                </option>
-                            {% endfor %}
-                        </select>
-                        </div>
-                    </div>
-                    <div class="filter-section multi">
-                        <h1 class="title">State</h1>
-                        <div class="choices">
                         <select name="state" class="form-control">
                             <option selected="true" disabled="disabled">State (All)
                             </option>
@@ -73,11 +31,19 @@
                                 </option>
                             {% endfor %}
                         </select>
-                        </div>
                     </div>
                     <div class="filter-section multi">
-                        <h1 class="title">Category</h1>
-                        <div class="choices">
+                        <select name="city" class="form-control">
+                            <option selected="true" disabled="disabled">City (All)         
+                            </option>
+                            {% for k,v in city_choices.items %}
+                                <option value="{{ k }}">
+                                {{v}}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="filter-section multi">
                         <select name="category" class="form-control">
                             <option selected="true" disabled="disabled">Category
                             </option>
@@ -87,11 +53,8 @@
                                 </option>
                             {% endfor %}
                         </select>
-                        </div>
                     </div>
                     <div class="filter-section multi">
-                        <h1 class="title">Type</h1>
-                        <div class="choices">
                         <select name="l_type" class="form-control">
                             <option selected="true" disabled="disabled">Type 
                             </option>
@@ -101,11 +64,8 @@
                                 </option>
                             {% endfor %}
                         </select>
-                        </div>
                     </div>
                     <div class="filter-section multi">
-                        <h1 class="title">Bedrooms</h1>
-                        <div class="choices">
                         <select name="bedrooms" class="form-control">
                             <option selected="true" disabled="disabled">Bedrooms
                             </option>
@@ -115,11 +75,8 @@
                                 </option>
                             {% endfor %}
                         </select>
-                        </div>
                     </div>
                       <div class="filter-section multi">
-                        <h1 class="title">Bathrooms</h1>
-                        <div class="choices">
                         <select name="bathrooms" class="form-control">
                             <option selected="true" disabled="disabled">Bathrooms
                             </option>
@@ -129,11 +86,8 @@
                                 </option>
                             {% endfor %}
                         </select>
-                        </div>
                     </div>
                       <div class="filter-section multi">
-                        <h1 class="title">Garage</h1>
-                        <div class="choices">
                         <select name="garage" class="form-control">
                             <option selected="true" disabled="disabled">Garage
                             </option>
@@ -143,9 +97,9 @@
                                 </option>
                             {% endfor %}
                         </select>
-                        </div>
-                    </div>
-                    <button type="submit">Submit</button>
+                    </div>  
+                    <hr>
+                    <button class="filter-section multi" type="submit">Submit</button>
                 </form>
                 </section>
             </section>

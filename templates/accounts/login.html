@@ -1,1 +1,39 @@
-<h1>LOG</h1>
+{% extends 'accounts_base.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/login_custom.css" %}">
+{% endblock styles %}
+{% block content %}
+    <main>
+        <section class="container">
+            <div class="jiv">
+                <h1>Log in to INDI-VILLA</h1>
+            </div>
+            <div class="g-button">
+                <button class=go>
+                    <img src="{% static "images/go.svg" %}" alt="" width="30">
+                    Continue with Google
+                </button>
+            </div>
+            <div class="or">
+                <img src="{% static "images/or.svg" %}" alt="" width="" height="30">
+            </div>
+            <form action="">
+                <label>
+                    <input type="name" id="femail" placeholder="Email / Username">
+                </label>
+                <label>
+                    <input type="password" id="femail" placeholder="Password">
+                </label>
+            </form>
+            <a href="" class="continue-button">Continue</a>
+            {% comment %} <div class="fp">
+                <a href="" class="fp-link">Forgot Password?</a>
+            </div> {% endcomment %}
+            <div class="aam">
+                Not a member?
+                <a href="{% url "signup" %}" class="log-in-link">Sign up</a>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

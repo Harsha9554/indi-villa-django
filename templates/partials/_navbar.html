@@ -1,7 +1,4 @@
 {% load static %}
-<head>
-    <link rel="stylesheet" href="{% static "css/navbar.css" %}">
-</head>
 <nav>
     <div class="brand">
             <a href="{% url "index" %}">
@@ -15,7 +12,14 @@
         <li><a class="nav-button"href="">Buy</a></li>
         <li><a class="nav-button"href="">Sell</a></li>
         <li><a class="divider" href="">I</a></li>
-        <li><a class="nav-button"href="{% url "signup" %}">Sign up</a></li>
-        <li><a class="nav-button"href="{% url "login" %}">Log in</a></li>
+        {% if "signup" in request.path %}
+            <li><a class="nav-button"href="{% url "login" %}">Log in</a></li>
+        {% elif "login" in request.path %}
+            <li><a class="nav-button"href="{% url "signup" %}">Sign up</a></li>
+        {% else %}
+            <li><a class="nav-button"href="{% url "login" %}">Log in</a></li>
+            <li><a class="nav-button"href="{% url "signup" %}">Sign up</a></li>
+        {% endif %}
+
     </ul>
 </nav>

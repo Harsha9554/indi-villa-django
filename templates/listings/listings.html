@@ -19,7 +19,7 @@
                 <div class="filters-h"><h1>FILTERS</h1></div>
                 <hr>
                 <section class="filter-sections">
-                <form action="listings" method="POST">
+                <form action="{% url "listings" %}" method="POST">
                     {% csrf_token %}
                     <div class="filter-section multi">
                         <select name="state" class="form-control">

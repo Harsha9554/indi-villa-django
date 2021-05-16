@@ -18,15 +18,16 @@
             <div class="or">
                 <img src="{% static "images/or.svg" %}" alt="" width="" height="30">
             </div>
-            <form action="">
+            <form action="{% url "login" %}" method="POST">
+                {% csrf_token %}
                 <label>
-                    <input type="name" id="femail" placeholder="Email / Username">
+                    <input type="name" name="username" id="femail" placeholder="Username">
                 </label>
                 <label>
-                    <input type="password" id="femail" placeholder="Password">
+                    <input type="password" name="password" id="femail" placeholder="Password">
                 </label>
+                <a href="#" onclick='this.parentNode.submit(); return false;' class="continue-button">Continue</a>
             </form>
-            <a href="" class="continue-button">Continue</a>
             {% comment %} <div class="fp">
                 <a href="" class="fp-link">Forgot Password?</a>
             </div> {% endcomment %}

@@ -10,6 +10,8 @@
     <!-- Bootstrap CSS -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css' integrity='sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==' crossorigin='anonymous'/>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' integrity='sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==' crossorigin='anonymous'/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css' integrity='sha512-q+YJl7Rp5Ma9Z3/QPTCtiQn91kWNlmxoQIbh3lq/EA0k1C7yMGz8wGnh/OBgDryDvi+FZr9icvcCDQ1TsMJOPQ==' crossorigin='anonymous'/>
+    
     <link rel="stylesheet" href="{% static "css/listing.css"%}">
     <title>INDI-VILLA</title>
   </head>
@@ -29,6 +31,39 @@
                     </div> 
                 </div>
                 <div class="grid-photos grid-item">
+                    <img src="{{listing.photo_main.url}}" class="img-main" alt="">
+                    <div class="thumbnails">
+                        {% if listing.photo_1 %}
+                            <a href="{{listing.photo_1.url}}" data-lightbox="home-images">
+                                <img src="{{listing.photo_1.url}}" class="i2" alt="">
+                            </a>
+                        {% endif %}
+                        {% if listing.photo_2 %}
+                            <a href="{{listing.photo_2.url}}" data-lightbox="home-images">
+                                <img src="{{listing.photo_2.url}}" class="i2" alt="">
+                            </a>
+                        {% endif %}
+                        {% if listing.photo_3 %}
+                            <a href="{{listing.photo_3.url}}" data-lightbox="home-images">
+                                <img src="{{listing.photo_3.url}}" class="i2" alt="">
+                            </a>
+                        {% endif %}
+                        {% if listing.photo_4 %}
+                            <a href="{{listing.photo_4.url}}" data-lightbox="home-images">
+                                <img src="{{listing.photo_4.url}}" class="i2" alt="">
+                            </a>
+                        {% endif %}
+                        {% if listing.photo_5 %}
+                            <a href="{{listing.photo_5.url}}" data-lightbox="home-images">
+                                <img src="{{listing.photo_5.url}}" class="i2" alt="">
+                            </a>
+                        {% endif %}
+                        {% if listing.photo_6 %}
+                            <a href="{{listing.photo_6.url}}" data-lightbox="home-images">
+                                <img src="{{listing.photo_6.url}}" class="i2" alt="">
+                            </a>
+                        {% endif %}
+                    </div>
                 </div>
                 <div class="grid-details grid-item">
                     <div class="detail">
@@ -212,6 +247,7 @@
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.min.js' integrity='sha512-ht05o05MNZyoqnOq62vJ74WU6vRezwbcDUhVTD/xZ4rO3JRm+YzRYgcylNTGgD/fyVvdwNh8uXp488B2ZdYKzQ==' crossorigin='anonymous'></script>
             <script src="{% static "js/alert.js" %}"></script>
 
         </body> 

@@ -141,5 +141,6 @@ MEDIA_URL = "/media/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MESSAGE_TAGS = {
-    messages.INFO: "",
+    messages.ERROR: "error",
+    messages.SUCCESS: "success",
 }

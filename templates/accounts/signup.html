@@ -6,6 +6,7 @@
 {% block content %}
      <main>
         <section class="container">
+        {% include "partials/_alerts.html" %}
             <div class="jiv">
                 <h1>Join INDI-VILLA</h1>
                 </div>
@@ -21,13 +22,22 @@
             <form id="sign" action="{% url "signup" %}" method="POST">
                 {% csrf_token %}
                 <label>
+                    <input type="text" name="first_name" id="username" placeholder="Enter First Name">
+                </label>
+                <label>
+                    <input type="text" name="last_name" id="username" placeholder="Enter Last Name">
+                </label>
+                <label>
                     <input type="email" name="email" placeholder="Enter Email">
                 </label>
                 <label>
                     <input type="text" name="username" id="username" placeholder="Enter Username">
                 </label>
                 <label>
-                    <input type="password" name="password" id="password" placeholder="Enter Password">
+                    <input type="password" name="password" placeholder="Enter Password">
+                </label>
+                <label>
+                    <input type="password" name="password2" placeholder="Re-Enter Password">
                 </label>
                 <a href="#" onclick='this.parentNode.submit(); return false;' class="continue-button">Continue</a>
             </form>

@@ -5,23 +5,30 @@ from django.contrib import auth, messages
 
 def signup(request):
     if request.method == "POST":
+        first_name = request.POST["first_name"]
+        last_name = request.POST["last_name"]
         username = request.POST["username"]
         email = request.POST["email"]
         password = request.POST["password"]
+        password2 = request.POST["password2"]
 
-        if User.objects.filter(username=username).exists():
-            messages.error(request, "that username already exists")
-            return redirect("signup")
-        elif User.objects.filter(email=email).exists():
-            messages.error(request, "that email already exists")
-            return redirect("signup")
+        if password == password2:
+            if User.objects.filter(username=username).exists():
+                messages.error(request, "that username already exists")
+                return redirect("signup")
+            elif User.objects.filter(email=email).exists():
+                messages.error(request, "that email already exists")
+                return redirect("signup")
+            else:
+                user = User.objects.create(username=username, email=email, first_name=first_name, last_name=last_name)
+                user.set_password(password)
+                user.save()
+                print("You are now registered and can log in")
+                messages.success(request, "You are now registered and can log in")
+                return redirect("login")
         else:
-            user = User.objects.create(username=username, email=email)
-            user.set_password(password)
-            user.save()
-            print("You are now registered and can log in")
-            messages.success(request, "You are now registered and can log in")
-            return redirect("login")
+            messages.error(request, "Passwords don't match")
+            return redirect("signup")
     else:
         return render(request, "accounts/signup.html")
 

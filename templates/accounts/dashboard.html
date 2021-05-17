@@ -7,63 +7,34 @@
       <main>
             <section class="greetings">
                 <div class="greeting">
-                    <h1>Welcome John Doe.</h1>
+                    <h1>Welcome {{user.first_name}} {{user.last_name}}.</h1>
                 </div>
-                <p>Here are the property listings that you have inquired about</p>
-            </section>
-            <section class="enq">
-                    <div class="detail">
-                        <table class="detail-table2">
-                        <colgroup>
-                            <col style="width:10%">
-                            <col style="width:40%">
-                            <col style="width:50%">
-                        </colgroup>
-                            <tr>
-                                <td class="table-image fa-lg">
-                                    1
-                                </td>
-                                <td>Project Title</td>
-                                <td>
-                                    <a href="">View Listing</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="table-image fa-lg">
-                                    1
-                                </td>
-                                <td>Project Title</td>
-                                <td>
-                                    <a href="">View Listing</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="table-image fa-lg">
-                                    1
-                                </td>
-                                <td>Project Title</td>
-                                <td>
-                                    <a href="">View Listing</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="table-image fa-lg">
-                                    1
-                                </td>
-                                <td>Project Title</td>
-                                <td>
-                                    <a href="">View Listing</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="table-image fa-lg">
-                                    1
-                                </td>
-                                <td>Project Title</td>
-                                <td>
-                                    <a href="">View Listing</a>
-                                </td>
-                            </tr>
+                {% if contacts %}
+                        <p>Here are the property listings that you have inquired about</p>
+                    </section>
+                    <section class="enq">
+                            <div class="detail">
+                                <table class="detail-table2">
+                                <colgroup>
+                                    <col style="width:10%">
+                                    <col style="width:40%">
+                                    <col style="width:50%">
+                                </colgroup>
+                                    {% for contact in contacts %}
+                                    <tr>
+                                        <td class="table-image fa-lg">
+                                            {{ contact.id }}
+
+                                        </td>
+                                        <td>{{ contact.listing }}</td>
+                                        <td>
+                                            <a href="{% url "listing" contact.listing_id %}">View Listing</a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                {% else %}
+                <p>You have not made any inquiries</p>
+                {% endif %}
                     </div>
             </section>
         </main>

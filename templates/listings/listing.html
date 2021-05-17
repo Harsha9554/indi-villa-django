@@ -15,8 +15,10 @@
   <body>
         <nav>
             <div class="brand">
-                <img src="{% static "images/brand.svg" %}" alt="" width="18">
-                INDI-VILLA
+                <a href="{% url "index" %}">
+                    <img src="{% static "images/brand.svg" %}" alt="" width="18">
+                    INDI-VILLA
+                </a>
             </div>
             <ul class="links">
                 <li><a class="nav-button"href="">Support</a></li>
@@ -143,7 +145,7 @@
                     <h1>Agent Details</h1>
                     <div class="agent-name">
                         <img src="{{agent.photo.url }}" alt="" width="125">
-                        <h2>Ravi Kumar</h2>
+                        <h2>{{agent.name}}</h2>
                     </div>
                     <table class="agent-table">
                         <colgroup>
@@ -156,21 +158,21 @@
                                   <i class="fas fa-mobile"></i>
                               </td>
                               <td>Mobile</td>
-                              <td>99999 99999</td>
+                              <td>{{agent.phone}}</td>
                           </tr>
                           <tr>
                               <td class="table-image">
                                   <i class="fas fa-envelope"></i>
                               </td>
                               <td>Email</td>
-                              <td>rajkumar@gmail.com</td>
+                              <td>{{agent.email}}</td>
                           </tr>
                           <tr>
                               <td class="table-image">
                                   <i class="fas fa-building"></i>
                               </td>
                               <td>Agency</td>
-                              <td>INDI-VILLA</td>
+                              <td>{{agent.agency}}</td>
                           </tr>
                     </table>
                 <div class="agent-button">
@@ -179,7 +181,9 @@
                 </div>
                 <div class="location grid-item">
                     <h1>Location</h1>
-
+                    <div class="map-iframe">
+                        <div class="mapouter"><div class="gmap_canvas"><iframe width="750" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=Old%20Madras%20Road,%20Bangalore%20East&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.online-timer.net"></a><br><style>.mapouter{position:relative;text-align:right;height:350px;width:750px;}</style><a href="https://www.embedgooglemap.net">using google maps on website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:350px;width:750px;}</style></div></div>
+                    </div>
                 </div>
             </main>
         </section>

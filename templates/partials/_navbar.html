@@ -13,13 +13,29 @@
         <li><a class="nav-button"href="">Sell</a></li>
         <li><a class="nav-button"href="http://localhost:8000/admin/">Admin</a></li>
         <li><a class="divider" href="">I</a></li>
-        {% if "signup" in request.path %}
-            <li><a class="nav-button"href="{% url "login" %}">Log in</a></li>
-        {% elif "login" in request.path %}
-            <li><a class="nav-button"href="{% url "signup" %}">Sign up</a></li>
+        {% if user.is_authenticated %}
+            <li>
+                <div class="profile">
+                    <img src="{% static "images/pp.svg" %}" alt="" width="35">
+                    <div class="p-dd">
+                        <a clas="p-dd-btn" href="">Profile</a>
+                        <div class="p-dd-c">
+                            <a href="">Account</a>
+                            <a href="">Analytics</a>
+                            <a href="">Log out</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
         {% else %}
-            <li><a class="nav-button"href="{% url "login" %}">Log in</a></li>
-            <li><a class="nav-button"href="{% url "signup" %}">Sign up</a></li>
+            {% if "signup" in request.path %}
+                <li><a class="nav-button"href="{% url "login" %}">Log in</a></li>
+            {% elif "login" in request.path %}
+                <li><a class="nav-button"href="{% url "signup" %}">Sign up</a></li>
+            {% else %}
+                <li><a class="nav-button"href="{% url "login" %}">Log in</a></li>
+                <li><a class="nav-button"href="{% url "signup" %}">Sign up</a></li>
+            {% endif %}
         {% endif %}
 
     </ul>

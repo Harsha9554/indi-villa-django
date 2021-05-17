@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "indian_numbers",
     "django.contrib.humanize",
     "accounts.apps.AccountsConfig",
+    "contacts.apps.ContactsConfig",
 ]
 
 MIDDLEWARE = [
@@ -141,6 +142,6 @@ MEDIA_URL = "/media/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MESSAGE_TAGS = {
-    messages.ERROR: "error",
+    messages.ERROR: "danger",
     messages.SUCCESS: "success",
 }

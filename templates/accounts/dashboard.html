@@ -1,1 +1,70 @@
-<h1>DASH</h1>
+{% extends 'accounts_base.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static "css/dashboard.css" %}">
+{% endblock styles %}
+{% block content %}
+      <main>
+            <section class="greetings">
+                <div class="greeting">
+                    <h1>Welcome John Doe.</h1>
+                </div>
+                <p>Here are the property listings that you have inquired about</p>
+            </section>
+            <section class="enq">
+                    <div class="detail">
+                        <table class="detail-table2">
+                        <colgroup>
+                            <col style="width:10%">
+                            <col style="width:40%">
+                            <col style="width:50%">
+                        </colgroup>
+                            <tr>
+                                <td class="table-image fa-lg">
+                                    1
+                                </td>
+                                <td>Project Title</td>
+                                <td>
+                                    <a href="">View Listing</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-image fa-lg">
+                                    1
+                                </td>
+                                <td>Project Title</td>
+                                <td>
+                                    <a href="">View Listing</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-image fa-lg">
+                                    1
+                                </td>
+                                <td>Project Title</td>
+                                <td>
+                                    <a href="">View Listing</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-image fa-lg">
+                                    1
+                                </td>
+                                <td>Project Title</td>
+                                <td>
+                                    <a href="">View Listing</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="table-image fa-lg">
+                                    1
+                                </td>
+                                <td>Project Title</td>
+                                <td>
+                                    <a href="">View Listing</a>
+                                </td>
+                            </tr>
+                    </div>
+            </section>
+        </main>
+{% endblock content %}

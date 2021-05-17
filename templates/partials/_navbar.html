@@ -18,11 +18,20 @@
                 <div class="profile">
                     <img src="{% static "images/pp.svg" %}" alt="" width="35">
                     <div class="p-dd">
-                        <a clas="p-dd-btn" href="">Profile</a>
+                        <a clas="p-dd-btn" href="">{{user.username}}</a>
                         <div class="p-dd-c">
-                            <a href="">Account</a>
-                            <a href="">Analytics</a>
-                            <a href="">Log out</a>
+                            {% if "dashboard" in request.path %}
+                                <form action="{% url "logout" %}" method="POST" id="logout" >
+                                    {% csrf_token %}
+                                    <a href="" onclick='this.parentNode.submit();return false;'>Log out</a>
+                                </form>
+                            {% else %}
+                                <a href="{% url "dashboard" %}">Dashboard</a>
+                                <form action="{% url "logout" %}" method="POST" id="logout" >
+                                    {% csrf_token %}
+                                    <a href="" onclick='this.parentNode.submit();return false;'>Log out</a>
+                                </form>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

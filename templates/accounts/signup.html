@@ -10,22 +10,13 @@
             <div class="jiv">
                 <h1>Join INDI-VILLA</h1>
                 </div>
-                <div class="g-button">
-                <button class=go>
-                    <img src="{% static "images/go.svg"%}" alt="" width="30">
-                    Continue with Google
-                </button>
-            </div>
-            <div class="or">
-                <img src="{% static "images/or.svg"%}" alt="" height="30">
-            </div>
             <form id="sign" action="{% url "signup" %}" method="POST">
                 {% csrf_token %}
                 <label>
-                    <input type="text" name="first_name" id="username" placeholder="Enter First Name">
+                    <input type="text" name="first_name" id="f" placeholder="Enter First Name">
                 </label>
                 <label>
-                    <input type="text" name="last_name" id="username" placeholder="Enter Last Name">
+                    <input type="text" name="last_name" id="l" placeholder="Enter Last Name">
                 </label>
                 <label>
                     <input type="email" name="email" placeholder="Enter Email">

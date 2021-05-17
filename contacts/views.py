@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
 from contacts.models import Contact
 from django.contrib import messages
+from django.core.mail import send_mail
+from indivilla import settings
 
 
 def contact(request):
@@ -24,6 +26,14 @@ def contact(request):
     )
 
     contact.save()
+
+    send_mail(
+        "Property Listing Inquiry",
+        "There has been an inquiry for " + listing + " .",
+        "indivilla.545@gmail.com",
+        [agent_email],
+        fail_silently=False,
+    )
     messages.success(request, "Your request has been submitted, a agent will get back to you soon")
 
     return redirect("/listings/" + listing_id)

@@ -10,15 +10,7 @@
             <div class="jiv">
                 <h1>Log in to INDI-VILLA</h1>
             </div>
-            <div class="g-button">
-                <button class=go>
-                    <img src="{% static "images/go.svg" %}" alt="" width="30">
-                    Continue with Google
-                </button>
-            </div>
-            <div class="or">
-                <img src="{% static "images/or.svg" %}" alt="" width="" height="30">
-            </div>
+
             <form action="{% url "login" %}" method="POST">
                 {% csrf_token %}
                 <label>
